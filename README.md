@@ -1,6 +1,16 @@
-# Nuxt Minimal Starter
+# TheConsciousRider Frontend - Nuxt.js Application with Tailwind CSS
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is the front end for The Conscious Rider website, which would be used for achieving a 2025 all-India motorcycle road trip. Built with NUXT3 and Tailwind.
+The backend, which fetches maps, calculates distances, draws on a map, and updates an Excel sheet, can be found here: 
+[https://github.com/prasanthsasikumar/RouteMapSync](https://github.com/prasanthsasikumar/RouteMapSync)
+## Features
+
+- **Nuxt.js**: Static Site = free hosting in netlify :)
+- **Tailwind CSS**: Cleaner code and easier to add features
+- **Dark Mode**: Supports dark mode with Tailwind CSS.
+- **Nuxt Content**: Manage markdown content easily.
+- **Responsive Design**: Responsive and mobile-friendly.
+
 
 ## Setup
 
@@ -19,10 +29,8 @@ yarn install
 # bun
 bun install
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Development Server
+Start the development server on http://localhost:3000:
 
 ```bash
 # npm
@@ -38,10 +46,8 @@ yarn dev
 bun run dev
 ```
 
-## Production
-
+Production
 Build the application for production:
-
 ```bash
 # npm
 npm run build
@@ -56,20 +62,6 @@ yarn build
 bun run build
 ```
 
-Locally preview production build:
+## License
+This project is licensed under the MIT License.
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
