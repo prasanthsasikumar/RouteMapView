@@ -1,4 +1,4 @@
-# Nuxt.js Application with Tailwind CSS
+# TheConsciousRider Frontend - Nuxt.js Application with Tailwind CSS
 
 This project is the front end for The Conscious Rider website, which would be used for achieving a 2025 all-India motorcycle road trip. Built with NUXT3 and Tailwind.
 The backend, which fetches maps, calculates distances, draws on a map, and updates an Excel sheet, can be found here: 
