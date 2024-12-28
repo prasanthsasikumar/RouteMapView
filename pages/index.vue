@@ -172,7 +172,7 @@ onMounted(() => {
 
 async function calculateRoute() {
   const locations = document.getElementById('input-box').value.split(',');
-  const response = await fetch('http://34.28.185.77:5000/api/calculate', {
+  const response = await fetch('https://theconsciousriderbackend.prasanthsasikumar.com/api/calculate', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
