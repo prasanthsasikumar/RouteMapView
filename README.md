@@ -62,6 +62,9 @@ yarn build
 bun run build
 ```
 
+![Screenshot](public/Screenshot.png)
+
+
 ## License
 This project is licensed under the MIT License.
 
