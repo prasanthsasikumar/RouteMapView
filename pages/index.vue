@@ -179,6 +179,8 @@ async function calculateRoute() {
     },
     body: JSON.stringify({ locations: locations })
   });
+  // print JSON.stringify({ locations: locations })
+  console.log(JSON.stringify({ locations: locations }))
   const data = await response.json();
   console.log(data);
   displayResults(data);
