@@ -8,7 +8,7 @@
         <!-- add 20% of vertical height available as gap -->
         <div class="h-20"></div>
         <div class="flex-grow font-extrabold text-center lg:w-full text-3xl lg:text-8xl text-white">
-          THE CONCSIOUS RIDER
+          THE GREAT INDIA RIDE
         </div>
         <div class="flex-grow text-center lg:w-full text-sm lg:text-base text-white/[.3]">
           <a href="https://prasanthsasikumar.com" target="_blank" rel="noopener noreferrer" class="hover:underline">

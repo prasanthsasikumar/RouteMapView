@@ -1,7 +1,7 @@
 <template>
     <div class="container relative z-10 px-4 mx-auto lg:max-w-6xl md:px-8 xl:px-0 flex items-center justify-between h-12 text-base leading-none text-white relative z-20">
             <div class="flex-1 transform -translate-y-px">
-                <NuxtLink to="/" class="psk font-extrabold md:text-lg lg:text-xl text-white">theconsciousrider<span class="font-light text-purple-200">.com</span></NuxtLink>
+                <NuxtLink to="/" class="psk font-extrabold md:text-lg lg:text-xl text-white">thegreatindiaride<span class="font-light text-purple-200">.com</span></NuxtLink>
             </div>
             <nav class="items-center justify-center flex-1 hidden space-x-3 text-sm tracking-wide uppercase md:space-x-4 lg:space-x-8 md:flex">
                 <NuxtLink to="/blog" class="text-purple-100 hover:text-white">Posts</NuxtLink>
