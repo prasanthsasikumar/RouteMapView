@@ -12,10 +12,58 @@
         </div>
         <div class="flex-grow text-center lg:w-full text-sm lg:text-base text-white/[.3]">
           <a href="https://prasanthsasikumar.com" target="_blank" rel="noopener noreferrer" class="hover:underline">
-            Why do we love to ride?
+            Exlporing the #IncredibleIndia. 28 States, 6 union territories. 20k Kms | 4 months
           </a>
         </div>
+        <div class="container relative z-10 px-4 mx-auto lg:max-w-6xl md:px-8 xl:px-0 mt-8 mb-0 md:mb-8 lg:mt-16">
+          <!-- Add the Map component here -->
+          <div>
+            <div class="map-container mt-8">
+              <LMap style="height: 550px" ref="map" :zoom="zoom" :center="[mapCenter.latitude, mapCenter.longitude]"
+                :use-global-leaflet="false">
+                <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+                  layer-type="base" name="OpenStreetMap" />
 
+                <LMarker v-for="location in locations" :key="location.origin" :icon-size="iconSize"
+                  :lat-lng="[location.latitude, location.longitude]">
+                  <LPopup>{{ location.origin }}</LPopup>
+                </LMarker>
+                <LPolyline :lat-lngs="polylineLatLngs" color="green" />
+                <LControl position="topright">
+                  <div class="visualize-button-container">
+                    <button class="visualize-button" @click="clickHandler">Visualize</button>
+                  </div>
+                </LControl>
+              </LMap>
+            </div>
+            <div>
+              <!-- <div id="try-yourself-text" class="flex-grow text-center lg:w-full text-sm lg:text-base text-white/[.3]">
+                <a href="#" @click.prevent="showDiv">Click here to if you'd like to try out the map yourself.</a>
+              </div> -->
+              <div class="hidden" id="map-form">
+                <div class="flex justify-center mt-8">
+                  <input type="text" id="input-box" class="border p-2 flex-grow min-w-0"
+                    placeholder="Enter comma separated locations here">
+                </div>
+                <div class="flex justify-center mt-8">
+                  <button @click="calculateRoute" class="border p-2 bg-blue-500 text-white">Calculate</button>
+                </div>
+                <div id="results" class="hidden bg-black text-white mt-8">
+                  <div class="flex justify-center mt-8">
+                    <table id="results-table" class="border-collapse w-full"></table>
+                  </div>
+                  <div class="flex justify-center mt-8">
+                    <pre id="total-distance" class="border p-2 w-full"></pre>
+                  </div>
+                  <div class="flex justify-center mt-8">
+                    <pre id="total-time" class="border p-2 w-full"></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container relative z-10 px-4 mx-auto lg:max-w-6xl md:px-8 xl:px-0 mt-8 mb-0 md:mb-8 lg:mt-32">
           <section class="about-area">
             <div class="container mx-auto">
@@ -37,10 +85,11 @@
                     <div class="about-details-inner shadow-box">
                       <NuxtLink class="overlay-link" to="/credentials"></NuxtLink>
                       <img class="star-img" src="/icon2.png" alt="Star">
-                      <h1 class="leading-tight">Prasanth Sasikumar</h1>
+                      <h1 class="leading-tight">Who am i?</h1>
                       <p class="pt-4">
-                        On a journey to experience the vibrant diversity of India, exploring its cultures, landscapes,
-                        and stories. The map below shows my route—click here to know more.
+                        I'm an academic who like motorcycles and travelling. I'm across the length
+                        and breadth of India, exploring its cultures, landscapes,
+                        and stories. The map above shows my route. click here to know more.
                       </p>
                       <div class="w-full flex justify-end mt-4">
                         <div
@@ -52,49 +101,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Add the Map component here -->
-              <div class="map-container mt-8">
-                <LMap style="height: 550px" ref="map" :zoom="zoom" :center="[mapCenter.latitude, mapCenter.longitude]"
-                  :use-global-leaflet="false">
-                  <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-                    layer-type="base" name="OpenStreetMap" />
 
-                  <LMarker v-for="location in locations" :key="location.origin" :icon-size="iconSize"
-                    :lat-lng="[location.latitude, location.longitude]">
-                    <LPopup>{{ location.origin }}</LPopup>
-                  </LMarker>
-                  <LPolyline :lat-lngs="polylineLatLngs" color="green" />
-                  <LControl position="topright">
-                    <div class="visualize-button-container">
-                      <button class="visualize-button" @click="clickHandler">Visualize</button>
-                    </div>
-                  </LControl>
-                </LMap>
-              </div>
-              <div id="try-yourself-text" class="flex-grow text-center lg:w-full text-sm lg:text-base text-white/[.3]">
-                <a href="#" @click.prevent="showDiv">Click here to if you'd like to try out the map yourself.</a>
-              </div>
-              <div class="hidden" id="map-form">
-                <div class="flex justify-center mt-8">
-                  <input type="text" id="input-box" class="border p-2 flex-grow min-w-0"
-                    placeholder="Enter comma separated locations here">
-                </div>
-                <div class="flex justify-center mt-8">
-                  <button @click="calculateRoute" class="border p-2 bg-blue-500 text-white">Calculate</button>
-                </div>
-                <div id="results" class="hidden bg-black text-white mt-8">
-                  <div class="flex justify-center mt-8">
-                    <table id="results-table" class="border-collapse w-full"></table>
-                  </div>
-                  <div class="flex justify-center mt-8">
-                    <pre id="total-distance" class="border p-2 w-full"></pre>
-                  </div>
-                  <div class="flex justify-center mt-8">
-                    <pre id="total-time" class="border p-2 w-full"></pre>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
         </div>
